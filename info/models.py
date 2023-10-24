@@ -11,8 +11,8 @@ class InfoBlog(models.Model):
     rating = models.PositiveSmallIntegerField(null=False)
     price = models.FloatField(null=False)
     is_deleted = models.BooleanField(null=False, default=False)
-    date = models.DateField(verbose_name='DateField')
-    datetime = models.DateTimeField()
+    # date = models.DateField(verbose_name='DateField')
+    # datetime = models.DateTimeField()
 
 
 

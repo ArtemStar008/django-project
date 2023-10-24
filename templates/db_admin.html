@@ -1,10 +1,61 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <title>$Title$</title>
+    <meta charset="UTF-8">
+    <title>My Site</title>
 </head>
 <body>
-$END$
+<h1>Data Base Admin</h1>
+<h1>Amount posts: {{ posts.count }}</h1>
+
+{% block posts_block %}
+    <h3>All posts:</h3>
+    <ol>
+        {% for post in posts %}
+            <li><a href="{% url 'post' post.id %}"><h4>{{ post.name }}</h4></a></li>
+{#            <a href="{{ post.get_absolute_url }}{{ id }}">{{ post.name }}</a>#}
+        {% endfor %}
+    </ol>
+
+{% endblock %}
+
+
+
+<br>
+{#<h2>First post: {{ posts.0.name|default:'Deleted post' }}</h2>#}
+{#<h2>Second post: {{ posts.1.name|default:'Deleted post' }}</h2>#}
+{#<h2>Third post: {{ posts.2.name|default:'Deleted post' }}</h2>#}
+
+{#    <a href="{% url 'admin' %}">Admin panel</a>#}
+
+{#<table width="30%" border="1px solid">#}
+{#    <tr>#}
+{#        <th>Name:</th>#}
+{#        <th>Text:</th>#}
+{#        <th>Price:</th>#}
+{#    </tr>#}
+{##}
+{##}
+{#    {% for post in posts %}#}
+{#        <tr>#}
+{#            <td>{{ post.name }}</td>#}
+{#            <td>{{ post.text }}</td>#}
+{#            <td>{{ post.price }}</td>#}
+{#        </tr>#}
+{##}
+{#    {% endfor %}#}
+{#        <tr>#}
+{#           <td>{{ posts.0.name }}</td>#}
+{#           <td>{{ posts.0.text }}</td>#}
+{#           <td>{{ posts.0.price }}</td>#}
+{#        </tr>#}
+{##}
+{#        <tr>#}
+{#           <td>{{ posts.1.name }}</td>#}
+{#           <td>{{ posts.1.text }}</td>#}
+{#           <td>{{ posts.1.price }}</td>#}
+{#        </tr>#}
+{#</table>#}
+
 </body>
 </html>

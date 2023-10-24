@@ -10,8 +10,8 @@ from info.models import InfoBlog
 
 @admin.register(InfoBlog)
 class InfoBlogAdmin(admin.ModelAdmin):
-    list_display = ('name', 'id', 'rating', 'price', 'is_deleted', 'date', 'datetime',)
+    list_display = ('name', 'id', 'rating', 'price', 'is_deleted',)
     search_fields = ('name', 'rating',)
     list_filter = ('is_deleted',)
-    sortable_by = ('rating', 'name', 'id', 'price', 'is_deleted', 'date', 'datetime',)
+    sortable_by = ('rating', 'name', 'id', 'price', 'is_deleted',)
 
