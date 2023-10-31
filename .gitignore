@@ -166,3 +166,6 @@ base
 global
 pg_wal
 data/postgres
+data/
+data.
+data/postgres/base
