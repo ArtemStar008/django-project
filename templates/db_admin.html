@@ -1,27 +1,63 @@
+{% load static %}
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>My Site</title>
+    <title>{% block title %}{% endblock %}</title>
+    {#    <link rel="stylesheet" href="{% static 'info/static/style.css' %}">#}
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="{% static 'info/css/style.css' %}">
+
+
 </head>
 <body>
-<h1>Data Base Admin</h1>
-<h1>Amount posts: {{ posts.count }}</h1>
+{#<h1>Data Base Admin</h1>#}
+{#<h1>Amount posts: {{ posts.count }} {{ deleted_posts.count }}</h1>#}
+<br>
+<aside>
+    <ul>
 
-{% block posts_block %}
-    <h3>All posts:</h3>
-    <ol>
-        {% for post in posts %}
-            <li><a href="{% url 'post' post.id %}"><h4>{{ post.name }}</h4></a></li>
-{#            <a href="{{ post.get_absolute_url }}{{ id }}">{{ post.name }}</a>#}
-        {% endfor %}
-    </ol>
+        <a href="{% url 'rules_page' %}">
+            <li><i class="bi bi-house"></i> Условия проката</li>
+        </a>
+        <a href="{% url 'about_page' %}">
+            <li><i class="bi bi-signpost-split"></i> Про нас</li>
+        </a>
+        <a href="{% url 'rules_page' %}">
+            <li><i class="bi bi-list"></i> Каталог</li>
+        </a>
+        <a href="{% url 'rules_page' %}">
+            <li><i class="bi bi-controller"></i> Игры</li>
+        </a>
+        <a href="{% url 'rules_page' %}">
+            <li><i class="bi bi-list-columns-reverse"></i> Комментарии</li>
+        </a>
+        <a href="{% url 'order-list' %}">
+            <li><i class="bi bi-list-columns-reverse"></i> Заказы </li>
+        </a>
+        <a href="{% url 'rules_page' %}">
+            <li>
+                <button type="button" class="btn btn-primary">Добавить комментарий</button>
+            </li>
+        </a>
+        <a href="{% url 'order-create' %}">
+            <li>
+                <button type="button" class="btn btn-primary">Оформить заказ приставки</button>
+            </li>
+        </a>
+    </ul>
+
+
+</aside>
+
+{% block content %}
 
 {% endblock %}
-
-
-
-<br>
+{##}
+{##}
+{##}
+{#<br>#}
 {#<h2>First post: {{ posts.0.name|default:'Deleted post' }}</h2>#}
 {#<h2>Second post: {{ posts.1.name|default:'Deleted post' }}</h2>#}
 {#<h2>Third post: {{ posts.2.name|default:'Deleted post' }}</h2>#}

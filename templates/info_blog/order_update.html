@@ -1,0 +1,25 @@
+{% extends 'db_admin.html' %}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>{% block title %} Posts Update {% endblock %}</title>
+
+</head>
+<body>
+{% block content %}
+    <h3>Update post:</h3>
+    <form method='post' action="{% url 'order-update' form.instance.pk %}">
+        {% csrf_token %}
+        {{ form.as_p }}
+        <button type="submit">Update Post</button>
+    </form>
+{#    <form method="post" action="{% url 'order-delete' form.instance.pk %}">#}
+{#        {% csrf_token %}#}
+{#        {{ form.as_p }}#}
+{#        <button type="submit">Update Post</button>#}
+{#    </form>#}
+{% endblock %}
+</body>
+</html>

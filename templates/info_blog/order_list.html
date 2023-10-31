@@ -1,0 +1,24 @@
+{% extends 'db_admin.html' %}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Posts</title>
+</head>
+<body>
+    {% block content %}
+{#        <form method="get" action="{% url 'order-create' %}">#}
+{#            <button>Create New Order</button>#}
+{#        </form>#}
+        <h3>Your orders:</h3>
+        <ol>
+            {% for order in orders %}
+                <li>
+                    <a href="{% url 'order-detail' order.id %}"><h4>{{ order.console }}</h4></a>
+                </li>
+            {% endfor %}
+        </ol>
+    {% endblock %}
+</body>
+</html>
