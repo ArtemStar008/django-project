@@ -23,4 +23,3 @@ class RentalConsole(models.Model):
     delivery_date = models.DateField('delivery date')
     delivery_time = models.TimeField('delivery time')
     is_deleted = models.BooleanField(null=False, default=False)
-

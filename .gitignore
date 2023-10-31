@@ -159,7 +159,7 @@ cython_debug/
 #  option (not recommended) you can uncomment the following to ignore the entire idea folder.
 .idea/
 
-data
+
 
 .idea
 base
@@ -169,3 +169,4 @@ data/postgres
 data/
 data.
 data/postgres/base
+data
